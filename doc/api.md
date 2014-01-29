@@ -11,7 +11,7 @@
 	POST
 		userbz=s
 	验证码图片：
-		http://mis.teach.ustc.edu.cn/randomImage.do?date='..........'
+		http://mis.teach.ustc.edu.cn/randomImage.do?date='1491004419612'
 		src = "randomImage.do?date"+Math.random()*(100);
 	Request COOKIE:
 		none
@@ -28,3 +28,15 @@
 	check:K8af
 	COOKIE
 		JSESSIONID
+##成绩查询
+###Request URL:
+http://mis.teach.ustc.edu.cn/querycjxx.do
+###Request Method:POST
+	xuenian:
+		NULL表示所有
+		2012(1,2,3)
+		1为秋季学期2，为次年
+	bjg:on/null
+	chaxun:anything is ok
+	px:1
+	zd:0
