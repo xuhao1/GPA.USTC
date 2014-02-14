@@ -13,10 +13,14 @@ class session:
         loginpage="data/login.html"
         self.wgetloadcookie(url="http://mis.teach.ustc.edu.cn/login.do",data=loginpost,filepath=loginpage)
     def getCheckCode(self):
-        self.wgetloadcookie(url="http://mis.teach.ustc.edu.cn/randomImage.do",data="date='1491004419612'",filepath="data/test.gif")
-        cv.ShowImage("Check",cv.LoadImage('data/test.gif'))
-        checkCode=raw_input("Please Enter the CheckCode\n")
-        cv.DestroyAllWindows()
+        #self.wgetloadcookie(url="http://mis.teach.ustc.edu.cn/randomImage.do",data="date='1491004419612'",filepath="data/test.gif")
+        #cv.ShowImage("Check",cv.LoadImage('data/test.gif'))
+        #checkCode=raw_input("Please Enter the CheckCode\n")
+        #cv.DestroyAllWindows()
+        self.wgetloadcookie(url="http://mis.teach.ustc.edu.cn/loadjym.do",filepath="data/check.txt")
+        fp=open("data/check.txt","r")
+        checkCode=fp.readline()
+        print checkCode
         return checkCode
     def writePage(self,name,page):
         fileHandle = open (name, 'w' )
